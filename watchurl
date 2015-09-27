@@ -1,2 +1,0 @@
-# openstack needs version >=1.0.1,<2
-watchurl=https://pypi.python.org/packages/source/w/warlock/warlock-(1[\d\.]*).tar.gz
