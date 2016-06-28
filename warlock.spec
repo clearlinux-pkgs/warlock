@@ -4,7 +4,7 @@
 #
 Name     : warlock
 Version  : 1.2.0
-Release  : 14
+Release  : 15
 URL      : https://pypi.python.org/packages/source/w/warlock/warlock-1.2.0.tar.gz
 Source0  : https://pypi.python.org/packages/source/w/warlock/warlock-1.2.0.tar.gz
 Summary  : Python object model built on JSON schema and JSON patch.
