@@ -1,3 +1,3 @@
-# openstack Liberty needs version >= 1.0.1 < 2
-# for more information check https://github.com/openstack/requirements/blob/stable/liberty/global-requirements.txt
-watchurl=https://pypi.python.org/simple/warlock/ ../../packages/source/w/warlock/warlock-(1.[\d\.]*).tar.gz
+# openstack Mitaka needs version < 1.3.0
+# for more information check https://github.com/openstack/requirements/commit/6064d762d5fe1c1c909abc25f8d76b7980ae6fed
+watchurl=https://pypi.debian.net/simple/warlock/warlock-(1.2.[\d\.]*).tar.gz
