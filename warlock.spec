@@ -4,13 +4,16 @@
 #
 Name     : warlock
 Version  : 1.3.0
-Release  : 23
+Release  : 24
 URL      : http://pypi.debian.net/warlock/warlock-1.3.0.tar.gz
 Source0  : http://pypi.debian.net/warlock/warlock-1.3.0.tar.gz
 Summary  : Python object model built on JSON schema and JSON patch.
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: warlock-python
+Requires: jsonpatch
+Requires: jsonschema
+Requires: six
 BuildRequires : jsonpatch
 BuildRequires : jsonpointer
 BuildRequires : jsonschema
@@ -41,7 +44,7 @@ python components for the warlock package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1484583865
+export SOURCE_DATE_EPOCH=1489263611
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -51,7 +54,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test-2.7 || :
 %install
-export SOURCE_DATE_EPOCH=1484583865
+export SOURCE_DATE_EPOCH=1489263611
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
