@@ -4,7 +4,7 @@
 #
 Name     : warlock
 Version  : 1.3.0
-Release  : 29
+Release  : 30
 URL      : https://files.pythonhosted.org/packages/2d/40/9f01a5e1574dab946598793351d59c86f58209d182d229aaa545abb98894/warlock-1.3.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/2d/40/9f01a5e1574dab946598793351d59c86f58209d182d229aaa545abb98894/warlock-1.3.0.tar.gz
 Summary  : Python object model built on JSON schema and JSON patch.
