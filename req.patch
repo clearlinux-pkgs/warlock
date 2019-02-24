@@ -1,0 +1,16 @@
+--- warlock-1.3.0/warlock.egg-info/requires.txt~	2016-06-25 18:13:37.000000000 +0000
++++ warlock-1.3.0/warlock.egg-info/requires.txt	2019-02-24 16:16:55.824045479 +0000
+@@ -1,3 +1,3 @@
+-jsonschema>=0.7,<3
+-jsonpatch>=0.10,<2
++jsonschema>=0.7
++jsonpatch>=0.10
+ six
+--- warlock-1.3.0/requirements.txt~	2016-06-25 17:38:50.000000000 +0000
++++ warlock-1.3.0/requirements.txt	2019-02-24 16:16:52.798045521 +0000
+@@ -1,3 +1,3 @@
+-jsonschema>=0.7,<3
+-jsonpatch>=0.10,<2
++jsonschema>=0.7
++jsonpatch>=0.10
+ six
