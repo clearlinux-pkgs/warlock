@@ -4,7 +4,7 @@
 #
 Name     : warlock
 Version  : 1.3.0
-Release  : 34
+Release  : 35
 URL      : https://files.pythonhosted.org/packages/2d/40/9f01a5e1574dab946598793351d59c86f58209d182d229aaa545abb98894/warlock-1.3.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/2d/40/9f01a5e1574dab946598793351d59c86f58209d182d229aaa545abb98894/warlock-1.3.0.tar.gz
 Summary  : Python object model built on JSON schema and JSON patch.
@@ -16,7 +16,6 @@ Requires: warlock-python3 = %{version}-%{release}
 Requires: jsonpatch
 Requires: jsonschema
 Requires: six
-BuildRequires : buildreq-distutils23
 BuildRequires : buildreq-distutils3
 BuildRequires : jsonpatch
 BuildRequires : jsonpointer
@@ -31,15 +30,6 @@ Patch1: req.patch
 %description
 # Warlock
 [![Build Status](https://travis-ci.org/bcwaldon/warlock.svg?branch=master)](https://travis-ci.org/bcwaldon/warlock)
-
-%package legacypython
-Summary: legacypython components for the warlock package.
-Group: Default
-Requires: python-core
-
-%description legacypython
-legacypython components for the warlock package.
-
 
 %package license
 Summary: license components for the warlock package.
@@ -76,9 +66,9 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551025101
-python2 setup.py build -b py2
-python3 setup.py build -b py3
+export SOURCE_DATE_EPOCH=1554304975
+export MAKEFLAGS=%{?_smp_mflags}
+python3 setup.py build
 
 %check
 export http_proxy=http://127.0.0.1:9/
@@ -86,22 +76,17 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test-2.7 || :
 %install
-export SOURCE_DATE_EPOCH=1551025101
+export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/warlock
 cp LICENSE.txt %{buildroot}/usr/share/package-licenses/warlock/LICENSE.txt
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
-
-%files legacypython
-%defattr(-,root,root,-)
-/usr/lib/python2*/*
 
 %files license
 %defattr(0644,root,root,0755)
