@@ -4,7 +4,7 @@
 #
 Name     : warlock
 Version  : 1.3.3
-Release  : 38
+Release  : 39
 URL      : https://files.pythonhosted.org/packages/c2/36/178b26a338cd6d30523246da4721b1114306f588deb813f3f503052825ee/warlock-1.3.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/c2/36/178b26a338cd6d30523246da4721b1114306f588deb813f3f503052825ee/warlock-1.3.3.tar.gz
 Summary  : Python object model built on JSON schema and JSON patch.
@@ -53,6 +53,10 @@ python components for the warlock package.
 Summary: python3 components for the warlock package.
 Group: Default
 Requires: python3-core
+Provides: pypi(warlock)
+Requires: pypi(jsonpatch)
+Requires: pypi(jsonschema)
+Requires: pypi(six)
 
 %description python3
 python3 components for the warlock package.
@@ -67,7 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1572557503
+export SOURCE_DATE_EPOCH=1583533073
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
